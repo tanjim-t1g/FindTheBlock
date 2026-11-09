@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Lobby World - FindTheBlock Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="brand">FindTheBlock</a>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="header-right">
+      <button class="search-btn" id="openSearch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search docs...</span>
+        <span class="kbd">Ctrl K</span>
+      </button>
+      <a href="https://github.com/tanjim-t1g/FindTheBlock" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="layout-container">
+    
+    <aside class="sidebar">
+      <div class="nav-group">
+        <div class="nav-group-title">Getting Started</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Overview</a></li>
+          <li class="nav-item"><a href="getting-started.html">Quick Start</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Core Mechanics</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="world-factory.html">World Gen &amp; Nether</a></li>
+          <li class="nav-item"><a href="lifecycle.html">Match Flow</a></li>
+          <li class="nav-item"><a href="reconnect.html">Crash Reconnect</a></li>
+          <li class="nav-item"><a href="buffs.html">20-Min Buffs</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Setup &amp; Config</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="void-lobby.html">Void Lobby</a></li>
+          <li class="nav-item active"><a href="custom-lobby.html">Change Lobby World</a></li>
+          <li class="nav-item"><a href="difficulty.html">Difficulty &amp; Recipes</a></li>
+          <li class="nav-item"><a href="config.html">Full Config</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Reference</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="commands.html">Commands &amp; Permissions</a></li>
+          <li class="nav-item"><a href="placeholders.html">PlaceholderAPI</a></li>
+          <li class="nav-item"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+        <main class="content">
+      <div class="breadcrumb">Docs / Setup &amp; Config / Change Lobby World</div>
+
+      <h1>Change Lobby World</h1>
+      <p class="lead-desc">How to use your own custom spawn, hub build, or multi-world lobby instead of the auto-generated void platform.</p>
+
+      <h2>Configuration</h2>
+      <p>Open <code>plugins/FindTheBlock/config.yml</code> and set your world name and disable the platform under the <code>lobby</code> section:</p>
+
+      <div class="pre-header">
+        <span>config.yml</span>
+        <button class="copy-btn" onclick="copyText('lobby:\n  world-name: &quot;hub&quot;\n  platform:\n    auto-generate: false\n  void-teleport: true\n  void-teleport-blocks-above-damage: 2.0')">Copy</button>
+      </div>
+      <pre><code>lobby:
+  world-name: "hub"        # Exact name of your custom world folder
+  platform:
+    auto-generate: false   # Disable the auto-generated bedrock platform
+
+  # Automatic void protection
+  void-teleport: true
+  void-teleport-blocks-above-damage: 2.0</code></pre>
+
+      <h2>Setup Steps</h2>
+      <ol>
+        <li>Make sure your custom world folder is placed in your server directory and loaded.</li>
+        <li>Open <code>config.yml</code> and set <code>lobby.world-name</code> to your world's exact name.</li>
+        <li>Set <code>lobby.platform.auto-generate: false</code> so the 100x100 bedrock box is not built inside your world.</li>
+        <li>Join the server, go to your custom lobby world, stand where you want players to spawn, and run <code>/setworldspawn</code>.</li>
+        <li>Restart the server.</li>
+      </ol>
+
+      <h2>Automatic Lobby Features</h2>
+      <p>When using a custom lobby world, FindTheBlock automatically manages the following protections:</p>
+      <ul>
+        <li><strong>World Spawn Integration:</strong> Players joining the lobby or returning from matches spawn at the world spawn point set by <code>/setworldspawn</code>.</li>
+        <li><strong>Keep Inventory:</strong> <code>keepInventory</code> is automatically enforced on the lobby world. If a player dies, their items and XP are preserved with zero ground drops.</li>
+        <li><strong>Void Fall Protection:</strong> If players slip off your lobby build into the void, they are caught 2 blocks before void damage starts and teleported back to the world spawn with fall distance reset to zero.</li>
+      </ul>
+
+      <div class="page-nav">
+        <a href="void-lobby.html" class="page-nav-link prev">
+          <span class="page-nav-sub">Previous</span>
+          <span class="page-nav-title">&larr; Void Lobby</span>
+        </a>
+        <a href="difficulty.html" class="page-nav-link next">
+          <span class="page-nav-sub">Next</span>
+          <span class="page-nav-title">Difficulty &amp; Recipes &rarr;</span>
+        </a>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="search-modal" id="searchModal">
+    <div class="search-card">
+      <div class="search-input-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchInput" placeholder="Search documentation..." autocomplete="off">
+        <span class="kbd">ESC</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script>
+    function copyText(t) {
+      navigator.clipboard.writeText(t).then(() => {
+        document.querySelectorAll('.copy-btn').forEach(b => {
+          if (b.innerText === 'Copy') { b.innerText = 'Copied'; setTimeout(() => b.innerText = 'Copy', 1500); }
+        });
+      });
+    }
+
+    const searchIndex = [
+      { title: 'Overview', href: 'index.html', section: 'Getting Started' },
+      { title: 'Quick Start', href: 'getting-started.html', section: 'Getting Started' },
+      { title: 'World Gen & Nether', href: 'world-factory.html', section: 'Core Mechanics' },
+      { title: 'Match Flow', href: 'lifecycle.html', section: 'Core Mechanics' },
+      { title: 'Crash Reconnect', href: 'reconnect.html', section: 'Core Mechanics' },
+      { title: '20-Min Buffs', href: 'buffs.html', section: 'Core Mechanics' },
+      { title: 'Void Lobby', href: 'void-lobby.html', section: 'Setup & Config' },
+      { title: 'Change Lobby World', href: 'custom-lobby.html', section: 'Setup & Config' },
+      { title: 'Difficulty & Recipes', href: 'difficulty.html', section: 'Setup & Config' },
+      { title: 'Full Config', href: 'config.html', section: 'Setup & Config' },
+      { title: 'Commands & Permissions', href: 'commands.html', section: 'Reference' },
+      { title: 'PlaceholderAPI', href: 'placeholders.html', section: 'Reference' },
+      { title: 'FAQ', href: 'faq.html', section: 'Reference' }
+    ];
+
+    const searchModal = document.getElementById('searchModal');
+    const openSearchBtn = document.getElementById('openSearch');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    function renderResults(query) {
+      searchResults.innerHTML = '';
+      const q = query.toLowerCase().trim();
+      const filtered = q ? searchIndex.filter(i => i.title.toLowerCase().includes(q) || i.section.toLowerCase().includes(q)) : searchIndex;
+      filtered.forEach(item => {
+        const a = document.createElement('a');
+        a.className = 'search-result-item';
+        a.href = item.href;
+        a.innerHTML = `<div class="search-result-title">${item.title}</div><div class="search-result-snippet">${item.section}</div>`;
+        searchResults.appendChild(a);
+      });
+    }
+
+    openSearchBtn.onclick = () => { searchModal.classList.add('open'); searchInput.value = ''; renderResults(''); searchInput.focus(); };
+    searchModal.onclick = (e) => { if (e.target === searchModal) searchModal.classList.remove('open'); };
+    window.onkeydown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); searchModal.classList.toggle('open'); searchInput.focus(); renderResults(''); }
+      if (e.key === 'Escape') searchModal.classList.remove('open');
+    };
+    searchInput.oninput = (e) => renderResults(e.target.value);
+  </script>
+</body>
+</html>

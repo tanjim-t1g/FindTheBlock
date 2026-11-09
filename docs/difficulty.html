@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Difficulty &amp; Recipes - FindTheBlock Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="brand">FindTheBlock</a>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="header-right">
+      <button class="search-btn" id="openSearch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search docs...</span>
+        <span class="kbd">Ctrl K</span>
+      </button>
+      <a href="https://github.com/tanjim-t1g/FindTheBlock" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="layout-container">
+    
+    <aside class="sidebar">
+      <div class="nav-group">
+        <div class="nav-group-title">Getting Started</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Overview</a></li>
+          <li class="nav-item"><a href="getting-started.html">Quick Start</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Core Mechanics</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="world-factory.html">World Gen &amp; Nether</a></li>
+          <li class="nav-item"><a href="lifecycle.html">Match Flow</a></li>
+          <li class="nav-item"><a href="reconnect.html">Crash Reconnect</a></li>
+          <li class="nav-item"><a href="buffs.html">20-Min Buffs</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Setup &amp; Config</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="void-lobby.html">Void Lobby</a></li>
+          <li class="nav-item"><a href="custom-lobby.html">Change Lobby World</a></li>
+          <li class="nav-item active"><a href="difficulty.html">Difficulty &amp; Recipes</a></li>
+          <li class="nav-item"><a href="config.html">Full Config</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Reference</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="commands.html">Commands &amp; Permissions</a></li>
+          <li class="nav-item"><a href="placeholders.html">PlaceholderAPI</a></li>
+          <li class="nav-item"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="breadcrumb">Docs / Setup &amp; Config / Difficulty &amp; Recipes</div>
+
+      <h1>Difficulty &amp; Recipes</h1>
+      <p class="lead-desc">Configure item tiers and display in-game crafting recipes.</p>
+
+      <h2>Difficulty Tiers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Target Items</th>
+            <th>Focus &amp; Style</th>
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td><code>EASY</code> (1 pt)</td>
+              <td>Diamond Ore, Amethyst Block, Calcite, Dripstone, Moss, Glow Lichen, Packed Ice, Magma, Dead Corals, Red Sand, Terracotta, Podzol</td>
+              <td>Surface &amp; biome exploration, basic underground resources</td>
+            </tr>
+            <tr>
+              <td><code>NORMAL</code> (3 pts)</td>
+              <td>Ancient Debris, Crying Obsidian, Sea Lantern, Prismarine, Shroomlight, Nylium, Resin Blocks, Sculk Sensors, Slime Block, Emerald Ore, Deepslate Diamond Ore, Sponge</td>
+              <td>Deep mining, Nether travel, ocean monuments, Trial Chamber exploration</td>
+            </tr>
+            <tr>
+              <td><code>HARD</code> (5 pts)</td>
+              <td>Mob Heads, Heavy Core, Shulker Boxes, Netherite Block, Beacon, Ender Chest, Lodestone, Purpur Block, Chorus Flower, End Stone Bricks, Mycelium</td>
+              <td>The End exploration, boss encounters, mushroom islands, endgame crafting</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <h2>Starting with a Difficulty</h2>
+      <p>Pass the difficulty as an argument, or choose it visually in the in-game Mode Selection GUI:</p>
+      <ul>
+        <li><code>/start easy</code> (Party leader ready-check)</li>
+        <li><code>/start normal</code></li>
+        <li><code>/start hard</code></li>
+        <li><code>/ftb startall [tier]</code> (Admin match for all lobby players)</li>
+      </ul>
+      <p>If omitted, the default tier defined in <code>config.yml</code> is used.</p>
+
+      <h2>Recipe Viewer GUI</h2>
+      <p>Players can check how to craft the target item at any time:</p>
+      <ul>
+        <li>Run <code>/recipe</code> in chat.</li>
+        <li>A 3 &times; 3 crafting table GUI opens displaying the exact pattern and ingredients.</li>
+        <li>Works for all standard shaped and shapeless vanilla recipes.</li>
+      </ul>
+
+      <div class="page-nav">
+        <a href="custom-lobby.html" class="page-nav-link prev">
+          <span class="page-nav-sub">Previous</span>
+          <span class="page-nav-title">&larr; Change Lobby World</span>
+        </a>
+        <a href="config.html" class="page-nav-link next">
+          <span class="page-nav-sub">Next</span>
+          <span class="page-nav-title">Full Config &rarr;</span>
+        </a>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="search-modal" id="searchModal">
+    <div class="search-card">
+      <div class="search-input-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchInput" placeholder="Search documentation..." autocomplete="off">
+        <span class="kbd">ESC</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script>
+    const searchIndex = [
+      { title: 'Overview', href: 'index.html', section: 'Getting Started' },
+      { title: 'Quick Start', href: 'getting-started.html', section: 'Getting Started' },
+      { title: 'World Gen & Nether', href: 'world-factory.html', section: 'Core Mechanics' },
+      { title: 'Match Flow', href: 'lifecycle.html', section: 'Core Mechanics' },
+      { title: 'Crash Reconnect', href: 'reconnect.html', section: 'Core Mechanics' },
+      { title: '20-Min Buffs', href: 'buffs.html', section: 'Core Mechanics' },
+      { title: 'Void Lobby', href: 'void-lobby.html', section: 'Setup & Config' },
+      { title: 'Change Lobby World', href: 'custom-lobby.html', section: 'Setup & Config' },
+      { title: 'Difficulty & Recipes', href: 'difficulty.html', section: 'Setup & Config' },
+      { title: 'Full Config', href: 'config.html', section: 'Setup & Config' },
+      { title: 'Commands & Permissions', href: 'commands.html', section: 'Reference' },
+      { title: 'PlaceholderAPI', href: 'placeholders.html', section: 'Reference' },
+      { title: 'FAQ', href: 'faq.html', section: 'Reference' }
+    ];
+
+    const searchModal = document.getElementById('searchModal');
+    const openSearchBtn = document.getElementById('openSearch');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    function renderResults(query) {
+      searchResults.innerHTML = '';
+      const q = query.toLowerCase().trim();
+      const filtered = q ? searchIndex.filter(i => i.title.toLowerCase().includes(q) || i.section.toLowerCase().includes(q)) : searchIndex;
+      filtered.forEach(item => {
+        const a = document.createElement('a');
+        a.className = 'search-result-item';
+        a.href = item.href;
+        a.innerHTML = `<div class="search-result-title">${item.title}</div><div class="search-result-snippet">${item.section}</div>`;
+        searchResults.appendChild(a);
+      });
+    }
+
+    openSearchBtn.onclick = () => { searchModal.classList.add('open'); searchInput.value = ''; renderResults(''); searchInput.focus(); };
+    searchModal.onclick = (e) => { if (e.target === searchModal) searchModal.classList.remove('open'); };
+    window.onkeydown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); searchModal.classList.toggle('open'); searchInput.focus(); renderResults(''); }
+      if (e.key === 'Escape') searchModal.classList.remove('open');
+    };
+    searchInput.oninput = (e) => renderResults(e.target.value);
+  </script>
+</body>
+</html>

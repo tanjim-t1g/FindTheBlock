@@ -1,0 +1,22 @@
+
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+dependency-reduced-pom.xml
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# VS Code
+.vscode/
